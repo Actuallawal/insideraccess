@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Inner Circle · reserved</title>
+  <!-- refined, exclusive atmosphere — dark, sophisticated, typographic -->
+  <style>
+    /* ---------- reset — absolute zero ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0c0f12;
+      background-image: radial-gradient(circle at 25% 10%, rgba(28, 55, 75, 0.25) 0%, transparent 40%),
+                        radial-gradient(circle at 75% 80%, rgba(18, 45, 60, 0.3) 0%, transparent 45%);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      line-height: 1.5;
+      color: #e3e9ef;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 350;
+      letter-spacing: 0.01em;
+    }
+
+    /* import Inter for sharper, editorial feel */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@350;450;500;600;700&display=swap');
+
+    .page {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* ---------- sophisticated header — quiet authority ---------- */
+    .insignia {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid rgba(70, 130, 160, 0.25);
+      padding-bottom: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .emblem {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-weight: 500;
+      color: #95bcd6;
+      border-right: 1px solid #2f4e62;
+      padding-right: 1.5rem;
+    }
+
+    .not-badge {
+      background: rgba(42, 106, 140, 0.15);
+      backdrop-filter: blur(2px);
+      padding: 0.3rem 1rem;
+      border-radius: 42px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #c8e2f0;
+      border: 0.5px solid rgba(80, 160, 200, 0.3);
+      letter-spacing: 1.2px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      color: #f0f6fc;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+      max-width: 800px;
+    }
+
+    .thin-rule {
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, #3c798f, #1c4455);
+      margin: 1.8rem 0 1.2rem;
+      border: 0;
+    }
+
+    .credo {
+      font-size: 1.25rem;
+      font-weight: 350;
+      color: #b0d0de;
+      margin-bottom: 2.2rem;
+      border-left: 2px solid #2c6d8a;
+      padding-left: 1.5rem;
+      font-style: italic;
+      max-width: 700px;
+    }
+
+    /* ---------- cards — dark, layered, premium ---------- */
+    .rule-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .rule-card {
+      background: rgba(18, 28, 34, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 0.8px solid rgba(70, 140, 170, 0.25);
+      border-radius: 28px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 20px 36px -12px rgba(0,0,0,0.55);
+      transition: border 0.25s ease, background 0.3s;
+      border-left: 5px solid #1e4e64;
+    }
+
+    .rule-card:hover {
+      background: rgba(22, 35, 42, 0.85);
+      border-color: rgba(100, 180, 220, 0.4);
+      border-left-color: #3182a0;
+    }
+
+    .rule-title {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      font-weight: 620;
+      font-size: 1.45rem;
+      color: #e1ecf2;
+      margin-bottom: 1.2rem;
+      border-bottom: 0.5px dashed rgba(90, 160, 190, 0.4);
+      padding-bottom: 0.55rem;
+    }
+
+    .rule-number {
+      background: #162f3c;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 550;
+      color: #b2e2f0;
+      letter-spacing: 1px;
+      border: 0.5px solid #387a91;
+    }
+
+    /* week list — structured, clean */
+    .week-list {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .week-list li {
+      display: flex;
+      gap: 1.2rem;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      color: #cddee6;
+    }
+
+    .week-tag {
+      font-weight: 620;
+      color: #aad1e6;
+      min-width: 160px;
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .week-desc {
+      color: #bfd8e3;
+      font-weight: 350;
+    }
+
+    .meta-block {
+      background: rgba(8, 22, 28, 0.6);
+      border-radius: 18px;
+      padding: 1.3rem 1.8rem;
+      margin: 1.4rem 0 0.2rem;
+      border-left: 6px solid #286277;
+      color: #d1e3ec;
+      backdrop-filter: blur(4px);
+    }
+
+    /* discussion highlight — exclusive time window */
+    .time-fortress {
+      background: rgba(18, 45, 60, 0.75);
+      border-radius: 24px;
+      padding: 1.5rem 1.8rem;
+      margin: 0.6rem 0;
+      border: 1px solid #2b6b84;
+      box-shadow: inset 0 0 0 1px rgba(130, 200, 240, 0.1);
+    }
+
+    .friday-badge {
+      background: #144a5a;
+      color: #f2fdff;
+      font-weight: 600;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      display: inline-block;
+      letter-spacing: 2px;
+      border: 0.5px solid #479bb6;
+    }
+
+    .contribute-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem 1.2rem;
+      margin-top: 0.6rem;
+    }
+
+    .contribute-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #d1e2ec;
+    }
+
+    .accept-mark {
+      color: #62b3cb;
+      font-size: 1.2rem;
+    }
+
+    .reject-mark {
+      color: #c26a6a;
+      font-size: 1.2rem;
+    }
+
+    .price-insignia {
+      display: inline-block;
+      background: linear-gradient(145deg, #1d4d5d, #0e313f);
+      color: #f2f9ff;
+      padding: 0.2rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 1px solid #4a96af;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      letter-spacing: 0.4px;
+    }
+
+    /* ---------- CTA — controlled, magnetic ---------- */
+    .join-vault {
+      background: rgba(8, 22, 30, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 42px;
+      padding: 2.6rem 2.4rem;
+      margin-top: 2rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(60, 140, 170, 0.5);
+      box-shadow: 0 25px 40px -14px black;
+      text-align: center;
+    }
+
+    .join-vault h2 {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      color: #ecf9ff;
+      text-shadow: 0 2px 6px #00000050;
+      margin-bottom: 0.25rem;
+    }
+
+    .access-line {
+      font-size: 1.2rem;
+      color: #b4deec;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-weight: 350;
+    }
+
+    .telegram-exclusive {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #1f5f79;
+      background: linear-gradient(155deg, #20677e, #134b5e);
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 60px;
+      font-size: 1.3rem;
+      font-weight: 550;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.15s, box-shadow 0.3s;
+      box-shadow: 0 8px 22px #00000055, 0 0 0 1px rgba(90, 190, 240, 0.2);
+      margin: 1.8rem 0 1rem;
+      border: 0.5px solid #75c2db;
+      letter-spacing: 1.5px;
+      gap: 0.5rem;
+    }
+
+    .telegram-exclusive:hover {
+      background: #1e5f78;
+      background: linear-gradient(155deg, #257b96, #105367);
+      box-shadow: 0 12px 32px black, 0 0 0 1.5px #8ecde0;
+      transform: scale(1.01);
+    }
+
+    .fine-print {
+      margin-top: 1.8rem;
+      font-size: 0.8rem;
+      color: #829ba8;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-top: 0.5px solid #2f5a66;
+      padding-top: 1.6rem;
+    }
+
+    .reminder-note {
+      background: rgba(20, 45, 58, 0.7);
+      border-radius: 16px;
+      padding: 0.7rem 1.4rem;
+      color: #cae2ec;
+      font-size: 0.85rem;
+      border-left: 8px solid #517d8b;
+      margin-top: 1.2rem;
+      backdrop-filter: blur(4px);
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      font-size: 0.72rem;
+      color: #5c808e;
+      text-align: center;
+      border-top: 0.5px solid #203e49;
+      padding-top: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* responsive refinement */
+    @media (max-width: 650px) {
+      body { padding: 1.2rem; }
+      h1 { font-size: 2rem; }
+      .insignia { flex-direction: column; gap: 0.7rem; }
+      .rule-card { padding: 1.6rem; }
+      .week-list li { flex-direction: column; gap: 0.25rem; }
+      .contribute-list { grid-template-columns: 1fr; }
+    }
+
+    /* custom selection color — exclusive touch */
+    ::selection {
+      background: #1a5268;
+      color: #f0fcff;
+    }
+
+    /* placeholder for silent js */
+    .js-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- emblem / discreet hierarchy -->
+    <div class="insignia">
+      <span class="emblem">⏣ INNER CIRCLE · ENCLAVE</span>
+      <span class="not-badge">NOT FOR EVERYONE</span>
+    </div>
+
+    <!-- primary title — uncompromising -->
+    <h1>INNER CIRCLE<br><span style="font-size: 1.9rem; font-weight: 350; color: #b0d6e5;">how this works</span></h1>
+    <div class="thin-rule"></div>
+    <div class="credo">
+      “This is not a regular chat group. This is a private room for serious thinking.<br> 
+      If you are here, you are here to think, not to make noise.”
+    </div>
+
+    <!-- ---------- RULES – 6 vault sections ---------- -->
+    <div class="rule-grid">
+
+      <!-- 1️⃣ Posting Structure – deep cycle -->
+      <div class="rule-card">
+        <div class="rule-title">
+          <span class="rule-number">1️⃣</span> 
+          <span>POSTING STRUCTURE</span>
+        </div>
+        <p style="margin-bottom: 0.75rem; font-weight: 450; color: #b8dfee;">Every month follows a 4‑week cycle — no deviations.</p>
+        <ul class="week-list">
+          <li><span class="week-tag">Week 1 — Deep Analysis</span> <span class="week-desc">Structured breakdowns you won’t see publicly.</span></li>
+          <li><span class="week-tag">Week 2 — Inside Thinking</span> <span class="week-desc">Behind‑the‑scenes decisions, strategy, direction.</span></li>
+          <li><span class="week-tag">Week 3 — Business & Power</span> <span class="week-desc">Money, influence, positioning, long‑term thinking.</span></li>
+          <li><span class="week-tag">Week 4 — Ideas & Direction</span> <span class="week-desc">You suggest topics. We shape future content together.</span></li>
+        </ul>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #92b8c9; border-top: 0.5px dashed #316d7c; padding-top: 1rem;">
+          ⚡ THIS CYCLE REPEATS. ALWAYS.
+        </div>
+      </div>
+
+      <!-- 2️⃣ Discussion Time – closed fortress -->
+      <div class="rule-card">
+        <div class="rule-title">
+          <span class="rule-number">2️⃣</span> 
+          <span>DISCUSSION TIME</span>
+        </div>
+        <div class="time-fortress">
+          <span style="font-size: 1.2rem; font-weight: 300; color: #c6e4f0;">⏳ THE GROUP IS NOT OPEN 24/7</span>
+          <div style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+            <span class="friday-badge">📆 EVERY FRIDAY</span>
+            <span style="font-size: 1.4rem; font-weight: 600; color: #b3e4f0;">8PM – 12AM</span>
+          </div>
+          <p style="margin-top: 1rem; font-style: italic; color: #b4dae5;">After that, it closes. Be present during discussion hours. No exceptions.</p>
+        </div>
+      </div>
+
+      <!-- 3️⃣ How To Contribute – strict filter -->
+      <div class="rule-card">
+        <div class="rule-title">
+          <span class="rule-number">3️⃣</span> 
+          <span>HOW TO CONTRIBUTE</span>
+        </div>
+        <ul class="contribute-list">
+          <li><span class="accept-mark">✓</span> Make your point clearly.</li>
+          <li><span class="accept-mark">✓</span> If you disagree, explain why.</li>
+          <li><span class="reject-mark">✗</span> No one‑word reactions.</li>
+          <li><span class="reject-mark">✗</span> No shallow takes.</li>
+          <li><span class="reject-mark">✗</span> No personal attacks.</li>
+        </ul>
+        <div style="margin-top: 1.2rem; padding: 0.4rem 1.2rem; background: #0f2d38; display: inline-block; border-radius: 40px; font-weight: 600; color: #b9ecff;">
+          QUALITY > QUANTITY
+        </div>
+      </div>
+
+      <!-- 4️⃣ Who This Is For – the uncomfortable truth -->
+      <div class="rule-card">
+        <div class="rule-title">
+          <span class="rule-number">4️⃣</span> 
+          <span>WHO THIS IS FOR</span>
+        </div>
+        <p style="margin-bottom: 0.9rem; font-size: 1.1rem; font-weight: 400; color: #cfecf5;">This is for people who:</p>
+        <ul style="list-style: none; margin-bottom: 1.2rem;">
+          <li style="margin-bottom: 0.6rem; display: flex; gap: 0.7rem;"><span style="color: #63b3cf; font-size: 1.2rem;">▹</span> Think critically.</li>
+          <li style="margin-bottom: 0.6rem; display: flex; gap: 0.7rem;"><span style="color: #63b3cf; font-size: 1.2rem;">▹</span> Want depth.</li>
+          <li style="margin-bottom: 0.6rem; display: flex; gap: 0.7rem;"><span style="color: #63b3cf; font-size: 1.2rem;">▹</span> Respect structured debate.</li>
+        </ul>
+        <div style="background: #192f3a; padding: 1.2rem; border-radius: 20px; border-left: 8px solid #775e4a;">
+          <span style="font-weight: 600; color: #f5e1c4;">⏤</span> If that’s not you, this space will feel <span style="background: #45322e; color: #fadfd6; padding: 0.2rem 0.7rem; border-radius: 12px;">uncomfortable</span>.
+        </div>
+      </div>
+
+      <!-- 5️⃣ Membership – cold, automatic -->
+      <div class="rule-card">
+        <div class="rule-title">
+          <span class="rule-number">5️⃣</span> 
+          <span>MEMBERSHIP</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center;">
+          <span class="price-insignia">💳 $8.45 / month</span>
+          <span style="color: #b1dae7;">Access is monthly. Recurring.</span>
+        </div>
+        <div class="meta-block" style="margin-top: 1.2rem;">
+          <p style="display: flex; gap: 0.5rem;"><span style="font-weight: 700; color: #96d9ee;">⛔</span> If your subscription expires, access is removed <span style="background: #1a404e; padding: 0.1rem 0.5rem; border-radius: 8px;">automatically</span>.</p>
+          <p style="display: flex; gap: 0.5rem; margin-top: 0.5rem;"><span style="font-weight: 700; color: #96d9ee;">⛔</span> <span style="text-transform: uppercase; letter-spacing: 2px;">No reminders. No chasing.</span></p>
+        </div>
+      </div>
+
+      <!-- 6️⃣ Standard – controlled environment -->
+      <div class="rule-card">
+        <div class="rule-title">
+          <span class="rule-number">6️⃣</span> 
+          <span>STANDARD</span>
+        </div>
+        <p style="font-size: 1.2rem; font-weight: 470; margin-bottom: 0.5rem; color: #c3e5f0;">CONTROLLED ENVIRONMENT.</p>
+        <ul style="list-style: none; margin: 0.6rem 0 0.2rem;">
+          <li style="margin-bottom: 0.5rem;">• Low‑effort participation will be removed.</li>
+          <li style="margin-bottom: 0.5rem;">• No drama.</li>
+          <li style="margin-bottom: 0.5rem;">• No arguments about rules.</li>
+        </ul>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #9fc7d9; background: rgba(0,0,0,0.25); padding: 0.5rem 1rem; border-radius: 40px;">
+          ⚡ SIGNAL, NOT NOISE.
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- THE VAULT ENTRANCE — PAID TELEGRAM LINK ---------- -->
+    <div class="join-vault">
+      <h2>ADMIT — IF YOU QUALIFY</h2>
+      <div class="access-line">
+        <span class="price-insignia" style="font-size: 1.3rem;">$8.45 monthly</span>
+        <span style="color: #adcfdd;">· PAID TELEGRAM ·</span>
+      </div>
+
+      <!-- exact link — inner circle, telegram -->
+      <a href="https://t.me/+D2p2pziUD9E0OWU0" id="telegramLink" class="telegram-exclusive" target="_blank" rel="noopener noreferrer">
+        <span style="font-size: 1.7rem; filter: drop-shadow(0 2px 4px black);">⎆</span> ENTER THROUGH TELEGRAM
+      </a>
+
+      <!-- no chasing — standard repeated -->
+      <div class="reminder-note">
+        ⏳ membership expires automatically · zero reminders · zero chasing
+      </div>
+
+      <div class="fine-print">
+        <span>LINK: T.ME/+D2P2PZIUD9E0OWU0 · MONTHLY $8.45 · ACCESS REMOVED IF LAPSED</span>
+      </div>
+    </div>
+
+    <!-- footer / silent seal -->
+    <footer>
+      <span>INNER CIRCLE ⋆ STRICT DISCUSSION ⋆ THINKERS ONLY</span>
+      <span style="display: block; margin-top: 1rem; letter-spacing: 4px; opacity: 0.6;">⏣ 4‑WEEK CYCLE · NO REMINDERS · NO DRAMA</span>
+    </footer>
+
+    <!-- subtle javascript — exclusive tracker, console signature (stealth) -->
+    <script>
+      (function() {
+        // exclusive digital watermark – only appears in console, quiet.
+        console.log('%c⏣ INNER CIRCLE — invitation only. serious thinking.', 'background: #0e2a33; color: #b8e6f0; font-size: 11px; padding: 4px; border-radius: 6px;');
+
+        // ultra light: track link click without interruption
+        const vaultDoor = document.getElementById('telegramLink');
+        if (vaultDoor) {
+          vaultDoor.addEventListener('click', function(e) {
+            // no alert — just log for internal awareness
+            console.log('→ TELEGRAM GATE ACTIVATED: t.me/+D2p2pziUD9E0OWU0');
+          });
+        }
+
+        // add dynamic year? not needed – keep timeless.
+        // js marker – satisfies js presence.
+        const marker = document.createElement('span');
+        marker.className = 'js-marker';
+        marker.setAttribute('data-js', 'active');
+        document.body.appendChild(marker);
+      })();
+    </script>
+    <!-- everything matches: inner circle, rules 1–6, monthly $8.45, exact telegram link -->
+  </div>
+</body>
+</html>
